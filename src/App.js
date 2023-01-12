@@ -1,4 +1,5 @@
 import GetData from "./Components/GetData";
+import "./App.css";
 
 function App() {
   return (

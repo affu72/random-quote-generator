@@ -1,31 +1,23 @@
 import QuoteText from "./QuoteText";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const GetData = (props) => {
   const [data, setData] = useState("");
 
-  async function fechData() {
-    // const options = {
-    //   method: "GET",
-    //   headers: {
-    //     "X-RapidAPI-Key": "a25a06f5dbmshe2b02350f72c404p1750aajsn343cefeafacc",
-    //     "X-RapidAPI-Host": "famous-quotes4.p.rapidapi.com",
-    //   },
-    // };
-
+  async function fetchData() {
     try {
-      const response = await fetch(
-        // "https://famous-quotes4.p.rapidapi.com/random?category=all&count=1",
-        // options
-        "https://hindi-quotes.vercel.app/random"
-      );
+      const response = await fetch("https://api.quotable.io/random");
       setData(await response.json());
     } catch (error) {
       console.log(console.log(error.msg));
     }
   }
 
-  return <QuoteText data={data} getQuote={fechData} />;
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return <QuoteText data={data} getQuote={fetchData} />;
 };
 
 export default GetData;
