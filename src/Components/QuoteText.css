@@ -6,6 +6,7 @@
   padding: 5rem;
   display: flex;
   flex-direction: column;
+  transition: all 1s;
 }
 
 .otro-blockquote {
@@ -22,6 +23,7 @@
   background: #ededed;
   min-height: 17rem;
   border-radius: 12px;
+  transition: all 3s;
 }
 
 .otro-blockquote::before {
@@ -61,6 +63,7 @@ button {
   color: black;
   border-radius: 4px;
   border: none;
+  transition: all 1s;
 }
 
 img {

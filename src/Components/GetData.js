@@ -17,7 +17,7 @@ const GetData = (props) => {
     fetchData();
   }, []);
 
-  return <QuoteText data={data} getQuote={fetchData} />;
+  return <QuoteText data={data} getQuote={() => fetchData()} />;
 };
 
 export default GetData;
