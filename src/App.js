@@ -1,4 +1,4 @@
-import GetData from "./Components/GetData";
+import GetData from "./Components/getData";
 import "./App.css";
 
 function App() {
